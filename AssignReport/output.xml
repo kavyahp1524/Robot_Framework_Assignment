@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.11.2 on win32)" generated="20230522 17:19:20.047" rpa="false" schemaversion="3">
+<suite id="s1" name="Testcase" source="D:\Moolyaed\Robot_Framework\Assignment\Tests\Testcase.robot">
+<kw name="Launching Url And Browser" library="Helpers" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL_Amz}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230522 17:19:20.376" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.in/'.</msg>
+<status status="PASS" starttime="20230522 17:19:20.375" endtime="20230522 17:19:28.494"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230522 17:19:28.495" endtime="20230522 17:19:28.738"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:20.374" endtime="20230522 17:19:28.739"/>
+</kw>
+<test id="s1-t1" name="Verifying If User Able To Navigate Prticular Product" line="18">
+<kw name="Given Scroll Down Upto Today'sDeal" library="key">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Today'sDeal}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230522 17:19:28.749" endtime="20230522 17:19:29.204"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Today'sDeal}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230522 17:19:29.205" endtime="20230522 17:19:29.562"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Today'sDeal}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230522 17:19:29.562" endtime="20230522 17:19:29.599"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:28.748" endtime="20230522 17:19:29.599"/>
+</kw>
+<kw name="When Selecting Third Product From Today'sDeal" library="key">
+<kw name="Wait For Element And Click" library="Helpers">
+<arg>${DealOfDay}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230522 17:19:29.601" endtime="20230522 17:19:29.637"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230522 17:19:29.638" level="INFO">Clicking element 'xpath://*[@class='a-unordered-list a-nostyle a-horizontal feed-carousel-shelf _deals-shoveler-v2_style_list__pjYuB']//parent::ul//child::li[3]'.</msg>
+<status status="PASS" starttime="20230522 17:19:29.638" endtime="20230522 17:19:31.686"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:29.601" endtime="20230522 17:19:31.686"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:29.600" endtime="20230522 17:19:31.686"/>
+</kw>
+<kw name="And Verifying Buds Prize" library="key">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Product1}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230522 17:19:31.695" endtime="20230522 17:19:31.802"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Productprize}</var>
+<arg>${ProductPrize}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230522 17:19:31.835" level="INFO">${Productprize} = 59,990</msg>
+<status status="PASS" starttime="20230522 17:19:31.802" endtime="20230522 17:19:31.835"/>
+</kw>
+<kw name="Wait For Element And Click" library="Helpers">
+<arg>${Product1}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230522 17:19:31.836" endtime="20230522 17:19:31.856"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230522 17:19:31.856" level="INFO">Clicking element 'xpath:(//*[@class='a-list-normal a-spacing-none no-margin-right overflow-hidden octopus-response-li-width'])[2]'.</msg>
+<status status="PASS" starttime="20230522 17:19:31.856" endtime="20230522 17:19:40.728"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:31.836" endtime="20230522 17:19:40.728"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${prize}</var>
+<arg>${Prize}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230522 17:19:40.865" level="INFO">${prize} = 59,990</msg>
+<status status="PASS" starttime="20230522 17:19:40.729" endtime="20230522 17:19:40.865"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${prize}</arg>
+<arg>${Productprize}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230522 17:19:40.865" endtime="20230522 17:19:40.865"/>
+</kw>
+<kw name="Wait For Element And Click" library="Helpers">
+<arg>${Details}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230522 17:19:40.866" endtime="20230522 17:19:40.943"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230522 17:19:40.944" level="INFO">Clicking element 'xpath://*[@id='seeMoreDetailsLink']'.</msg>
+<status status="PASS" starttime="20230522 17:19:40.943" endtime="20230522 17:19:41.359"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:40.865" endtime="20230522 17:19:41.360"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:31.695" endtime="20230522 17:19:41.360"/>
+</kw>
+<kw name="Then Checking Table Content By Doing Ittiration" library="key">
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${Rowcount}</var>
+<arg>${RowCount}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20230522 17:19:41.455" level="INFO">${Rowcount} = 53</msg>
+<status status="PASS" starttime="20230522 17:19:41.361" endtime="20230522 17:19:41.455"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${Coloumcount}</var>
+<arg>${ColoumCount}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20230522 17:19:41.772" level="INFO">${Coloumcount} = 53</msg>
+<status status="PASS" starttime="20230522 17:19:41.455" endtime="20230522 17:19:41.772"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${RowIndex}</var>
+<value>1</value>
+<value>${Rowcount} + 1</value>
+<iter>
+<var name="${RowIndex}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${RowContent}</var>
+<arg>xpath://*[@id='productDetails_techSpec_section_1']//tr[${RowIndex}]//th</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230522 17:19:43.510" level="INFO">${RowContent} = Brand</msg>
+<status status="PASS" starttime="20230522 17:19:41.774" endtime="20230522 17:19:43.510"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${RowContent}" == "${ExpectedTitle}"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230522 17:19:43.510" endtime="20230522 17:19:43.511"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:41.773" endtime="20230522 17:19:43.511"/>
+</iter>
+<iter>
+<var name="${RowIndex}">2</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${RowContent}</var>
+<arg>xpath://*[@id='productDetails_techSpec_section_1']//tr[${RowIndex}]//th</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230522 17:19:43.755" level="INFO">${RowContent} = Manufacturer</msg>
+<status status="PASS" starttime="20230522 17:19:43.511" endtime="20230522 17:19:43.755"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${RowContent}" == "${ExpectedTitle}"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230522 17:19:43.755" endtime="20230522 17:19:43.756"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:43.511" endtime="20230522 17:19:43.756"/>
+</iter>
+<iter>
+<var name="${RowIndex}">3</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${RowContent}</var>
+<arg>xpath://*[@id='productDetails_techSpec_section_1']//tr[${RowIndex}]//th</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230522 17:19:43.811" level="INFO">${RowContent} = Model</msg>
+<status status="PASS" starttime="20230522 17:19:43.756" endtime="20230522 17:19:43.811"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${RowContent}" == "${ExpectedTitle}"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230522 17:19:43.812" endtime="20230522 17:19:43.812"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:43.756" endtime="20230522 17:19:43.812"/>
+</iter>
+<iter>
+<var name="${RowIndex}">4</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${RowContent}</var>
+<arg>xpath://*[@id='productDetails_techSpec_section_1']//tr[${RowIndex}]//th</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230522 17:19:43.923" level="INFO">${RowContent} = Model Name</msg>
+<status status="PASS" starttime="20230522 17:19:43.812" endtime="20230522 17:19:43.923"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${RowContent}" == "${ExpectedTitle}"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230522 17:19:43.923" endtime="20230522 17:19:43.923"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:43.812" endtime="20230522 17:19:43.924"/>
+</iter>
+<iter>
+<var name="${RowIndex}">5</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${RowContent}</var>
+<arg>xpath://*[@id='productDetails_techSpec_section_1']//tr[${RowIndex}]//th</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230522 17:19:43.975" level="INFO">${RowContent} = Model Year</msg>
+<status status="PASS" starttime="20230522 17:19:43.924" endtime="20230522 17:19:43.975"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${RowContent}" == "${ExpectedTitle}"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230522 17:19:43.976" endtime="20230522 17:19:43.976"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:43.924" endtime="20230522 17:19:43.976"/>
+</iter>
+<iter>
+<var name="${RowIndex}">6</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${RowContent}</var>
+<arg>xpath://*[@id='productDetails_techSpec_section_1']//tr[${RowIndex}]//th</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230522 17:19:44.040" level="INFO">${RowContent} = Product Dimensions</msg>
+<status status="PASS" starttime="20230522 17:19:43.977" endtime="20230522 17:19:44.040"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${RowContent}" == "${ExpectedTitle}"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230522 17:19:44.040" endtime="20230522 17:19:44.041"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:43.977" endtime="20230522 17:19:44.041"/>
+</iter>
+<iter>
+<var name="${RowIndex}">7</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${RowContent}</var>
+<arg>xpath://*[@id='productDetails_techSpec_section_1']//tr[${RowIndex}]//th</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230522 17:19:44.118" level="INFO">${RowContent} = Batteries</msg>
+<status status="PASS" starttime="20230522 17:19:44.041" endtime="20230522 17:19:44.118"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${RowContent}" == "${ExpectedTitle}"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230522 17:19:44.118" endtime="20230522 17:19:44.119"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:44.041" endtime="20230522 17:19:44.119"/>
+</iter>
+<iter>
+<var name="${RowIndex}">8</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${RowContent}</var>
+<arg>xpath://*[@id='productDetails_techSpec_section_1']//tr[${RowIndex}]//th</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230522 17:19:44.255" level="INFO">${RowContent} = Item model number</msg>
+<status status="PASS" starttime="20230522 17:19:44.119" endtime="20230522 17:19:44.255"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${RowContent}" == "${ExpectedTitle}"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230522 17:19:44.256" endtime="20230522 17:19:44.256"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:44.119" endtime="20230522 17:19:44.256"/>
+</iter>
+<iter>
+<var name="${RowIndex}">9</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${RowContent}</var>
+<arg>xpath://*[@id='productDetails_techSpec_section_1']//tr[${RowIndex}]//th</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230522 17:19:44.335" level="INFO">${RowContent} = RAM Size</msg>
+<status status="PASS" starttime="20230522 17:19:44.256" endtime="20230522 17:19:44.335"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${RowContent}" == "${ExpectedTitle}"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<msg timestamp="20230522 17:19:44.336" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20230522 17:19:44.336" endtime="20230522 17:19:44.336"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:44.335" endtime="20230522 17:19:44.337"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:44.256" endtime="20230522 17:19:44.337"/>
+</iter>
+<status status="PASS" starttime="20230522 17:19:41.772" endtime="20230522 17:19:44.337"/>
+</for>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${RowIndex}\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230522 17:19:44.337" endtime="20230522 17:19:44.338"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${RowContent}\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230522 17:19:44.338" endtime="20230522 17:19:44.339"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${ColoumIndex}</var>
+<value>1</value>
+<value>${ColoumCount} + 1</value>
+<iter>
+<var name="${ColoumIndex}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${CurrentData}</var>
+<arg>xpath://*[@id='productDetails_techSpec_section_1']//tr[${RowIndex}]//td[${ColoumIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230522 17:19:44.439" level="INFO">${CurrentData} = 16 GB</msg>
+<status status="PASS" starttime="20230522 17:19:44.340" endtime="20230522 17:19:44.439"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${CurrentData}&quot; == &quot;${ExpectedData}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${CurrentData}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230522 17:19:44.440" endtime="20230522 17:19:44.441"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:44.440" endtime="20230522 17:19:44.441"/>
+</branch>
+<status status="PASS" starttime="20230522 17:19:44.439" endtime="20230522 17:19:44.441"/>
+</if>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${CurrentData}" == "${ExpectedData}"</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<msg timestamp="20230522 17:19:44.442" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20230522 17:19:44.442" endtime="20230522 17:19:44.443"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:44.441" endtime="20230522 17:19:44.443"/>
+</kw>
+<status status="PASS" starttime="20230522 17:19:44.340" endtime="20230522 17:19:44.443"/>
+</iter>
+<status status="PASS" starttime="20230522 17:19:44.339" endtime="20230522 17:19:44.443"/>
+</for>
+<status status="PASS" starttime="20230522 17:19:41.361" endtime="20230522 17:19:44.444"/>
+</kw>
+<tag>Searching</tag>
+<status status="PASS" starttime="20230522 17:19:28.739" endtime="20230522 17:19:44.444"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230522 17:19:44.447" endtime="20230522 17:19:46.915"/>
+</kw>
+<doc>Amazon</doc>
+<status status="PASS" starttime="20230522 17:19:20.049" endtime="20230522 17:19:46.915"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Searching</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Testcase">Testcase</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
